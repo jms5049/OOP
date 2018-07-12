@@ -10,7 +10,14 @@ public class testShop {
 		int i= 0;
 		String className = args[0];
 		
-		
+		try{
+			
+			bk = (Burgerking) Class.forName(className).newInstance();
+			
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}		
 		i = input.nextInt();
 		bk.purchase(i);
 		bk.bill();
